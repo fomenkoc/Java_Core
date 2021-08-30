@@ -1,5 +1,5 @@
 package com.gmail.fomenkoc.homeworks.homework01;
-//asdasd
+
 public class Application {
 public static void main(String[] args) {
 		
