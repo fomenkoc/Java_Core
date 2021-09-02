@@ -24,19 +24,21 @@ public class HW04App {
 		
 		
 		
-		Animal animal = new Animal("Гепард", 112, 5);
+		Animal animal = new Animal("пїЅпїЅпїЅпїЅпїЅпїЅ", 112, 5);
 
-		System.out.println("Назва тварини = " + animal.getKind() + 
-				", Швидкість тварини = " + animal.getSpeed() + 
-				" км/год, Вік тварини = " + animal.getAge() + " років");
+		System.out.println("пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ = " + animal.getKind() + 
+				", пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ = " + animal.getSpeed() + 
+				" пїЅпїЅ/пїЅпїЅпїЅ, ВіпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ = " + animal.getAge() + " пїЅпїЅпїЅпїЅ");
 		
-		animal.setKind("Антилопа");
+		animal.setKind("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ");
 		animal.setSpeed(55);
 		animal.setAge(10);
 		
-		System.out.println("Назва тварини = " + animal.getKind() + 
-				", Швидкість тварини = " + animal.getSpeed() + 
-				" км/год, Вік тварини = " + animal.getAge() + " років");
+		System.out.println("пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ = " + animal.getKind() + 
+				", пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ = " + animal.getSpeed() + 
+				" пїЅпїЅ/пїЅпїЅпїЅ, ВіпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ = " + animal.getAge() + " пїЅпїЅпїЅпїЅ");
+		
+		System.out.println("Рђ С‚Р°Рє С‚Рѕ РІР·Р°РіР°Р»С– РІРѕРЅРѕ РІРјС–С” РІ Р»СЋРґСЃСЊРєС– Р»С–С‚РµСЂРё");
 	}
 
 }
