@@ -4,7 +4,7 @@ public class CoffeRobot extends Robot{
 	
 	public CoffeRobot() {
 		super();
-		super.setMsg("Я CoffeRobot – я варю каву");
+		super.setMsg("РЇ CoffeRobot вЂ“ СЏ РІР°СЂСЋ РєР°РІСѓ");
 	}
 
 }

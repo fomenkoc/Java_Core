@@ -4,6 +4,6 @@ public class RobotDancer extends Robot {
 
 	public RobotDancer() {
 		super();
-		super.setMsg("Я RobotDancer – я просто танцюю");
+		super.setMsg("РЇ RobotDancer вЂ“ СЏ РїСЂРѕСЃС‚Рѕ С‚Р°РЅС†СЋСЋ");
 	}
 }

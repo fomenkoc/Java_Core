@@ -24,19 +24,19 @@ public class HW04App {
 		
 		
 		
-		Animal animal = new Animal("������", 112, 5);
+		Animal animal = new Animal("Гепард", 112, 5);
 
-		System.out.println("����� ������� = " + animal.getKind() + 
-				", �������� ������� = " + animal.getSpeed() + 
-				" ��/���, ³� ������� = " + animal.getAge() + " ����");
+		System.out.println("Назва творини = " + animal.getKind() + 
+				", Швидкість творини = " + animal.getSpeed() + 
+				" Вік тварини = " + animal.getAge() + " років");
 		
-		animal.setKind("��������");
+		animal.setKind("Антилопа");
 		animal.setSpeed(55);
 		animal.setAge(10);
 		
-		System.out.println("����� ������� = " + animal.getKind() + 
-				", �������� ������� = " + animal.getSpeed() + 
-				" ��/���, ³� ������� = " + animal.getAge() + " ����");
+		System.out.println("Назва творини = " + animal.getKind() + 
+				", Швидкість творини = " + animal.getSpeed() + 
+				" Вік тварини = " + animal.getAge() + " років");
 		
 		System.out.println("А так то взагалі воно вміє в людські літери");
 	}

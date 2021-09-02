@@ -5,7 +5,7 @@ public class Robot {
 	private String msg;
 	
 	public Robot() {
-		this.msg = "Я Robot – я просто працюю";
+		this.msg = "РЇ Robot вЂ“ СЏ РїСЂРѕСЃС‚Рѕ РїСЂР°С†СЋСЋ";
 	}
 	
 	

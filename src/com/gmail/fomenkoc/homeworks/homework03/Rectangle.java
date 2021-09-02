@@ -29,15 +29,15 @@ public class Rectangle {
 
 		switch (s) {
 		case "perimeter":
-		case "периметр":
-			System.out.println("Периметр прямокутника = " + this.getPerimeter());
+		case "РїРµСЂРёРјРµС‚СЂ":
+			System.out.println("РџРµСЂРёРјРµС‚СЂ РїСЂСЏРјРѕРєСѓС‚РЅРёРєР° = " + this.getPerimeter());
 			break;
 		case "area":
-		case "площа":
-			System.out.println("Площа прямокутника = " + this.getArea());
+		case "РїР»РѕС‰Р°":
+			System.out.println("РџР»РѕС‰Р° РїСЂСЏРјРѕРєСѓС‚РЅРёРєР° = " + this.getArea());
 			break;
 		default:
-			System.out.println("Некоректне введення");
+			System.out.println("РќРµРєРѕСЂРµРєС‚РЅРµ РІРІРµРґРµРЅРЅСЏ");
 			break;
 		}
 	}
