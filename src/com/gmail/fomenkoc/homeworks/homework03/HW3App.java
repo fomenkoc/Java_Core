@@ -9,15 +9,15 @@ public class HW3App {
 		r1.msgToConsole("Perimeter");
 		r1.msgToConsole("area");
 		
-		r2.msgToConsole("Периметр");
-		r2.msgToConsole("Площа");
+		r2.msgToConsole("РџРµСЂРёРјРµС‚СЂ");
+		r2.msgToConsole("РџР»РѕС‰Р°");
 		r2.msgToConsole("qwe");
 		
 		
 		Circle c = new Circle(42);
 		
-		System.out.println("Площа кола = " + c.getArea());
-		System.out.println("Довжина кола = " + c.getLength());
+		System.out.println("РџР»РѕС‰Р° РєРѕР»Р° = " + c.getArea());
+		System.out.println("Р”РѕРІР¶РёРЅР° РєРѕР»Р° = " + c.getLength());
 		
 		
 	}

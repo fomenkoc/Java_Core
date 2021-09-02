@@ -4,7 +4,7 @@ public class RobotCoocker extends Robot {
 	
 	public RobotCoocker() {
 		super();
-		super.setMsg("Я RobotCoocker – я просто готую");
+		super.setMsg("РЇ RobotCoocker вЂ“ СЏ РїСЂРѕСЃС‚Рѕ РіРѕС‚СѓСЋ");
 	}
 
 }

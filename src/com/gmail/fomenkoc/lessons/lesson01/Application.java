@@ -3,7 +3,8 @@ package com.gmail.fomenkoc.lessons.lesson01;
 public class Application {
 
 	public static void main(String[] args) {
-//		//Приклад 1 : Додавання і віднімання змінних
+
+//		//РџСЂРёРєР»Р°Рґ 1 : Р”РѕРґР°РІР°РЅРЅСЏ С– РІС–РґРЅС–РјР°РЅРЅСЏ Р·РјС–РЅРЅРёС…
 //		
 //		int d = 1;
 //		int e = 2;
@@ -18,15 +19,15 @@ public class Application {
 //		System.out.println("res3 = " + res3);
 //		System.out.println("res4 = " + res4);
 
-//		//Приклад 2: Який буде результат виведення на екран? (інкремент/декремент)
+//		//РџСЂРёРєР»Р°Рґ 2: РЇРєРёР№ Р±СѓРґРµ СЂРµР·СѓР»СЊС‚Р°С‚ РІРёРІРµРґРµРЅРЅСЏ РЅР° РµРєСЂР°РЅ? (С–РЅРєСЂРµРјРµРЅС‚/РґРµРєСЂРµРјРµРЅС‚)
 //		
 //		int a = 0;
 //		int b = a++;
 //		int c = a++;
-//		System.out.println("Приклад 2 = " + a +" " + b + " " + c + " ");
+//		System.out.println("РџСЂРёРєР»Р°Рґ 2 = " + a +" " + b + " " + c + " ");
 //		
 
-//		//Приклад 3: Операції з присвоєнням
+//		//РџСЂРёРєР»Р°Рґ 3: РћРїРµСЂР°С†С–С— Р· РїСЂРёСЃРІРѕС”РЅРЅСЏРј
 //		int f = 1;
 //		int g = 2;
 //		int h = 3;
@@ -40,13 +41,13 @@ public class Application {
 //		System.out.println("g = " + g);
 //		System.out.println("h = " + h);
 
-//		//Приклад 4: Тернарний оператор
+//		//РџСЂРёРєР»Р°Рґ 4: РўРµСЂРЅР°СЂРЅРёР№ РѕРїРµСЂР°С‚РѕСЂ
 //		
 //		int a = 2;		
 //		int r = a > 0 ? -3 : 2;
 //		System.out.println("r = "+ r);
 
-//		//Приклад 5: Логічні оператори
+//		//РџСЂРёРєР»Р°Рґ 5: Р›РѕРіС–С‡РЅС– РѕРїРµСЂР°С‚РѕСЂРё
 //		
 //		boolean j = true;
 //		boolean k = false;
@@ -62,7 +63,7 @@ public class Application {
 //		System.out.println("n = " + n);
 //		System.out.println("o = " + o);
 
-//		//Приклад 6 : Оперіції рівності
+//		//РџСЂРёРєР»Р°Рґ 6 : РћРїРµСЂС–С†С–С— СЂС–РІРЅРѕСЃС‚С–
 //		
 //		int t =5;
 //		int u = 5;
@@ -75,7 +76,7 @@ public class Application {
 //		System.out.println("result3 = " + result3 );
 //		
 
-//		// Приклад 7: Конструкція if-else
+//		// РџСЂРёРєР»Р°Рґ 7: РљРѕРЅСЃС‚СЂСѓРєС†С–СЏ if-else
 //
 //		int a1 = 3;
 //		int b1 = 9;
@@ -86,7 +87,7 @@ public class Application {
 //			System.out.println("a1 < b1");
 //		}
 
-//		// Приклад 8: Конструкція if-else -if 
+//		// РџСЂРёРєР»Р°Рґ 8: РљРѕРЅСЃС‚СЂСѓРєС†С–СЏ if-else -if 
 //		
 //		if(a1 * a1  == b1) {
 //			System.out.println("1");
@@ -96,7 +97,7 @@ public class Application {
 //			System.out.println("3");
 //		}
 
-//		//Приклад 9: Конструкція switch
+//		//РџСЂРёРєР»Р°Рґ 9: РљРѕРЅСЃС‚СЂСѓРєС†С–СЏ switch
 //		
 //		int k1 = 2;
 //		
@@ -109,12 +110,12 @@ public class Application {
 //			default :System.out.println("default");;
 //		}
 
-//		// Цикл for
+//		// Р¦РёРєР» for
 //		for (int i = 0; i < 10; i++) {
 //			System.out.println("i = " + i);
 //		}
 
-//		Цикл while
+//		Р¦РёРєР» while
 //		int i = 0;
 //
 //		while (i <10) {
@@ -130,7 +131,7 @@ public class Application {
 		
 		
 		
-//		// Приклад 10  Масиви:
+//		// РџСЂРёРєР»Р°Рґ 10  РњР°СЃРёРІРё:
 //		
 //		int array1 [] = new int [10];
 //		double [] array2 = new double [10];
@@ -152,7 +153,7 @@ public class Application {
 //		}
 		
 		
-		//Приклад 11: Обгортки примітивів ( Wrappers primitives)
+		//РџСЂРёРєР»Р°Рґ 11: РћР±РіРѕСЂС‚РєРё РїСЂРёРјС–С‚РёРІС–РІ ( Wrappers primitives)
 		
 //		Byte a1 = 2;
 //		Short a2  = 2;
@@ -167,6 +168,8 @@ public class Application {
 		
 	
 		//First commit to gitHub
+		
+		
 
 	}
 
