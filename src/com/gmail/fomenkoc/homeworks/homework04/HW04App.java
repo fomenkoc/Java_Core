@@ -38,7 +38,7 @@ public class HW04App {
 				", Швидкість творини = " + animal.getSpeed() + 
 				" Вік тварини = " + animal.getAge() + " років");
 		
-		System.out.println("А так то взагалі воно вміє в людські літери");
+		
 	}
 
 }
