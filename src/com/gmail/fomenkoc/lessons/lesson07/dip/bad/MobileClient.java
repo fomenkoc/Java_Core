@@ -1,0 +1,10 @@
+package com.gmail.fomenkoc.lessons.lesson07.dip.bad;
+
+public class MobileClient {
+	DataAccess dataAccess = new DataAccess();
+	
+	void fetchData() {
+		dataAccess.executeAccess();
+		System.out.println("Data is fetched");
+	}
+}
