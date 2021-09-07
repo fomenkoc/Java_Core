@@ -10,9 +10,12 @@ public class HW07App {
 		su27.startingEngines();
 		su27.takeoff();
 		su27.flyingUp();
-		su27.flyingDown();
 		su27.flyingLeft();
+		su27.flyingDown();
 		su27.flyingRight();
+		su27.stealth();
+		su27.nuclearStrike();
+		su27.forsage();
 		su27.landing();
 		
 		

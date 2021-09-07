@@ -1,6 +1,10 @@
 package com.gmail.fomenkoc.homeworks.homework07.classes;
 
-public class Su27 extends Plane {
+import com.gmail.fomenkoc.homeworks.homework07.interfaces.Forsage;
+import com.gmail.fomenkoc.homeworks.homework07.interfaces.NuclearStrike;
+import com.gmail.fomenkoc.homeworks.homework07.interfaces.Stealth;
+
+public class Su27 extends Plane implements Forsage, Stealth, NuclearStrike {
 	private String name;
 	private int topSpeed;
 	private String color;
@@ -46,6 +50,26 @@ public class Su27 extends Plane {
 	public void landing() {
 		System.out.println("Bird at home, " + this.name + " going to land");
 
+	}
+
+	@Override
+	public void nuclearStrike() {
+		int warheads = (int) controlCenter.getRadnom(1, 10);
+		System.out.println("Delivery of the payload, " + warheads + " warheads gone");
+
+	}
+
+	@Override
+	public void stealth() {
+		int minutes = (int) controlCenter.getRadnom(1, 60);
+		System.out.println("Disguise for " + minutes + " minutes");
+
+	}
+
+	@Override
+	public void forsage() {
+		double acceleration = controlCenter.getRadnom(10, 30) / 100.0 + 1;
+		System.out.println("Afterburner is on, current speed - " + this.topSpeed * acceleration + " km/h");
 	}
 
 }
