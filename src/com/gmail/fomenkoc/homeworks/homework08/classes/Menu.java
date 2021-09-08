@@ -2,19 +2,21 @@ package com.gmail.fomenkoc.homeworks.homework08.classes;
 
 import java.util.Scanner;
 
+import com.gmail.fomenkoc.homeworks.homework08.enumeration.Month;
+import com.gmail.fomenkoc.homeworks.homework08.enumeration.Season;
+
 public class Menu {
 	private static boolean isRun;
 	private static Scanner scanner = new Scanner(System.in);
 
 	public static void start() {
 
-
 		setRun(true);
 
 		while (isRun()) {
 
 			showMainMenu();
-			showSubMenu(scanner.nextInt());
+			showSubMenu(scanner.next());
 
 		}
 	}
@@ -33,18 +35,56 @@ public class Menu {
 		System.out.println("0 - Exit");
 	}
 
-	static void showSubMenu(int menuItem) {
-		System.out.println("Submenu"); // TODO remove this
+	static void showSubMenu(String menuItem) {
 
 		switch (menuItem) {
-		case 0: {
+		case "0": {
 			System.out.println("Good-bye");
 			setRun(false);
+			break;
 		}
 
-		case 1: {
+		case "1": {
 			System.out.println("Enter season");
-			System.out.println(scanner.nextInt());
+			actions(menuItem, scanner.next());
+			break;
+		}
+		case "2": {
+			System.out.println("Enter day count");
+			actions(menuItem, scanner.next());
+			break;
+		}
+		case "3": {
+			System.out.println("Enter day count");
+			actions(menuItem, scanner.next());
+			break;
+		}
+		case "4": {
+			System.out.println("Enter day count");
+			actions(menuItem, scanner.next());
+			break;
+		}
+		case "5": {
+			System.out.println("Enter season");
+			actions(menuItem, scanner.next());
+			break;
+		}
+		case "6": {
+			System.out.println("Enter season");
+			actions(menuItem, scanner.next());
+			break;
+		}
+		case "7": {
+			actions(menuItem, "");
+			break;
+		}
+		case "8": {
+			actions(menuItem, "");
+			break;
+		}
+		case "9": {
+			System.out.println("Enter month");
+			actions(menuItem, scanner.next());
 			break;
 		}
 
@@ -53,6 +93,113 @@ public class Menu {
 			break;
 		}
 
+	}
+
+	static void actions(String menuItem, String input) {
+		input = input.toUpperCase();
+		Month[] months = Month.values();
+
+		switch (menuItem) {
+		case "1": {
+
+			for (Month month : months) {
+				if (month.getSeasonStr().equals(input)) {
+					System.out.println(month.name());
+				}
+			}
+			break;
+		}
+		case "2": {
+
+			for (Month month : months) {
+				if (month.getDayCount() == Integer.parseInt(input)) {
+					System.out.println(month.name());
+				}
+			}
+			break;
+		}
+		case "3": {
+
+			for (Month month : months) {
+				if (month.getDayCount() < Integer.parseInt(input)) {
+					System.out.println(month.name());
+				}
+			}
+			break;
+		}
+		case "4": {
+
+			for (Month month : months) {
+				if (month.getDayCount() > Integer.parseInt(input)) {
+					System.out.println(month.name());
+				}
+			}
+			break;
+		}
+		case "5": {
+			int seasonID = -1;
+			Season[] seasons = Season.values();
+			for (int i = 0; i < seasons.length; i++) {
+				if (seasons[i].name().equals(input)) {
+					seasonID = i;
+				}
+			}
+			if (seasonID == -1) {
+				System.out.println("Incorrect season.");
+				break;
+			} else if (seasonID == seasons.length - 1) {
+				seasonID = 0;
+			} else {
+				seasonID++;
+			}
+			System.out.println(seasons[seasonID]);
+			break;
+		}
+		case "6": {
+			int seasonID = -1;
+			Season[] seasons = Season.values();
+			for (int i = 0; i < seasons.length; i++) {
+				if (seasons[i].name().equals(input)) {
+					seasonID = i;
+				}
+			}
+			if (seasonID == -1) {
+				System.out.println("Incorrect season.");
+				break;
+			} else if (seasonID == 0) {
+				seasonID = seasons.length - 1;
+			} else {
+				seasonID--;
+			}
+			System.out.println(seasons[seasonID]);
+			break;
+		}
+		case "7": {
+			for (Month month : months) {
+				if (month.getDayCount() % 2 == 0) {
+					System.out.println(month.name());
+				}
+			}
+			break;
+		}
+		case "8": {
+			for (Month month : months) {
+				if (month.getDayCount() % 2 != 0) {
+					System.out.println(month.name());
+				}
+			}
+			break;
+		}
+		case "9": {
+			for (Month month : months) {
+				if (month.name().equals(input)) {
+					System.out.println(month.getDayCount() % 2 == 0);
+				}
+			}
+			break;
+		}
+
+		}
 	}
 
 	public static boolean isRun() {
