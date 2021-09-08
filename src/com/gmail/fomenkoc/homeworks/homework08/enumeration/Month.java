@@ -21,5 +21,9 @@ public enum Month {
 		return season;
 	}
 	
+	public String getSeasonStr() {
+		return season.toString();
+	}
+	
 	
 }
