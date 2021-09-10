@@ -2,29 +2,37 @@ package com.gmail.fomenkoc.homeworks.homework09.classes;
 
 import java.util.Scanner;
 
-import com.gmail.fomenkoc.homeworks.homework08.enumeration.Month;
-import com.gmail.fomenkoc.homeworks.homework08.enumeration.Season;
+import com.gmail.fomenkoc.homeworks.homework09.enumeration.Month;
+import com.gmail.fomenkoc.homeworks.homework09.enumeration.Season;
 
 public class Menu {
     private static boolean isRun;
     private static Scanner scanner = new Scanner(System.in);
 
     public static void start() {
+	int input = 0;
 
 	setRun(true);
 
 	while (isRun()) {
 
 	    showMainMenu();
-	    showSubMenu(scanner.next());
-
+	    try {
+	    input = castToInt(scanner.next());
+	    }
+	    catch (WrongInputParameter e) {
+		 System.out.println(e.getMessage());
+		 input = -1;
+	    }
+	    finally {
+	    showSubMenu(input);
+	    }
 	}
     }
-/**
- * @
- * */
+
     static void showMainMenu() {
-	String mainMenu = "Enter number to execute action:" 
+	String mainMenu = 
+		"Enter number to execute action:" 
 		+ "\r\n"
 		+ "1 - Display all months with the same time of year"
 		+ "\r\n"
@@ -46,73 +54,38 @@ public class Menu {
 		+ "\r\n" 
 		+ "0 - Exit";
 	System.out.println(mainMenu);
-//	System.out.println("Enter number to execute action:");
-//	System.out.println(
-//		"1 - Display all months with the same time of year");
-//	System.out.println(
-//		"2 - Display all months that have the same number of days");
-//	System.out.println("3 - Display all months with fewer days");
-//	System.out.println(
-//		"4 - Display all months that have more days");
-//	System.out.println("5 - Display the next season");
-//	System.out.println("6 - Display the previous season");
-//	System.out.println(
-//		"7 - Display all months that have an even number of days");
-//	System.out.println(
-//		"8 - Display all months that have an odd number of days");
-//	System.out.println(
-//		"9 - Display whether the month entered from the console has an even number of days");
-//	System.out.println("0 - Exit");
+
     }
 
-    static void showSubMenu(String menuItem) {
+    static void showSubMenu(int menuItem) {
 
 	switch (menuItem) {
-	case "0": {
+	case 0: {
 	    System.out.println("Good-bye");
 	    setRun(false);
 	    break;
 	}
 
-	case "1": {
+	case 1:
+	case 5:
+	case 6:{
 	    System.out.println("Enter season");
 	    actions(menuItem, scanner.next());
 	    break;
 	}
-	case "2": {
+	case 2:
+	case 3: 
+	case 4: {
 	    System.out.println("Enter day count");
 	    actions(menuItem, scanner.next());
 	    break;
 	}
-	case "3": {
-	    System.out.println("Enter day count");
-	    actions(menuItem, scanner.next());
-	    break;
-	}
-	case "4": {
-	    System.out.println("Enter day count");
-	    actions(menuItem, scanner.next());
-	    break;
-	}
-	case "5": {
-	    System.out.println("Enter season");
-	    actions(menuItem, scanner.next());
-	    break;
-	}
-	case "6": {
-	    System.out.println("Enter season");
-	    actions(menuItem, scanner.next());
-	    break;
-	}
-	case "7": {
+	case 7: 
+	case 8: {
 	    actions(menuItem, "");
 	    break;
 	}
-	case "8": {
-	    actions(menuItem, "");
-	    break;
-	}
-	case "9": {
+	case 9: {
 	    System.out.println("Enter month");
 	    actions(menuItem, scanner.next());
 	    break;
@@ -125,12 +98,12 @@ public class Menu {
 
     }
 
-    static void actions(String menuItem, String input) {
+    static void actions(int menuItem, String input) {
 	input = input.toUpperCase();
 	Month[] months = Month.values();
 
 	switch (menuItem) {
-	case "1": {
+	case 1: {
 
 	    for (Month month : months) {
 		if (month.getSeasonStr().equals(input)) {
@@ -139,7 +112,7 @@ public class Menu {
 	    }
 	    break;
 	}
-	case "2": {
+	case 2: {
 
 	    for (Month month : months) {
 		if (month.getDayCount() == Integer.parseInt(input)) {
@@ -148,7 +121,7 @@ public class Menu {
 	    }
 	    break;
 	}
-	case "3": {
+	case 3: {
 
 	    for (Month month : months) {
 		if (month.getDayCount() < Integer.parseInt(input)) {
@@ -157,7 +130,7 @@ public class Menu {
 	    }
 	    break;
 	}
-	case "4": {
+	case 4: {
 
 	    for (Month month : months) {
 		if (month.getDayCount() > Integer.parseInt(input)) {
@@ -166,7 +139,7 @@ public class Menu {
 	    }
 	    break;
 	}
-	case "5": {
+	case 5: {
 	    int seasonID = -1;
 	    Season[] seasons = Season.values();
 	    for (int i = 0; i < seasons.length; i++) {
@@ -185,7 +158,7 @@ public class Menu {
 	    System.out.println(seasons[seasonID]);
 	    break;
 	}
-	case "6": {
+	case 6: {
 	    int seasonID = -1;
 	    Season[] seasons = Season.values();
 	    for (int i = 0; i < seasons.length; i++) {
@@ -204,7 +177,7 @@ public class Menu {
 	    System.out.println(seasons[seasonID]);
 	    break;
 	}
-	case "7": {
+	case 7: {
 	    for (Month month : months) {
 		if (month.getDayCount() % 2 == 0) {
 		    System.out.println(month.name());
@@ -212,7 +185,7 @@ public class Menu {
 	    }
 	    break;
 	}
-	case "8": {
+	case 8: {
 	    for (Month month : months) {
 		if (month.getDayCount() % 2 != 0) {
 		    System.out.println(month.name());
@@ -220,7 +193,7 @@ public class Menu {
 	    }
 	    break;
 	}
-	case "9": {
+	case 9: {
 	    for (Month month : months) {
 		if (month.name().equals(input)) {
 		    System.out.println(month.getDayCount() % 2 == 0);
@@ -229,6 +202,7 @@ public class Menu {
 	    break;
 	}
 
+	
 	}
     }
 
@@ -239,4 +213,16 @@ public class Menu {
     public static void setRun(boolean isRun) {
 	Menu.isRun = isRun;
     }
+    
+    public static int castToInt(String inputStr) throws WrongInputParameter {
+	if (inputStr.matches("[-+]?\\d+")) {
+	    return Integer.parseInt(inputStr);
+	}
+	else {
+	    String message = "an integer is expected";
+	    throw new WrongInputParameter(message);
+	}
+		    
+    }
+    
 }
