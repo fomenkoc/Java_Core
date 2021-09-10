@@ -8,7 +8,7 @@ public class HW09App {
 
     public static void main(String[] args) throws MyException {
 	Menu.start();
-
+	System.out.println("Test");
 	Methods m = new Methods();
 	m.addition(53321, -47174);
 	m.subtraction(-654, 321);
