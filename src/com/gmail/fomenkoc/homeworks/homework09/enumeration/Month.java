@@ -11,6 +11,10 @@ public enum Month {
     int dayCount;
     Season season;
 
+    /**
+     * @param String
+     * @param int
+     */
     Month(Season season, int dayCount) {
 	this.season = season;
 	this.dayCount = dayCount;

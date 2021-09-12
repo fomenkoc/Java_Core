@@ -1,14 +1,25 @@
+/*
+ * Homework 09 Application
+ */
 package com.gmail.fomenkoc.homeworks.homework09;
 
 import com.gmail.fomenkoc.homeworks.homework09.classes.Menu;
 import com.gmail.fomenkoc.homeworks.homework09.classes.Methods;
 import com.gmail.fomenkoc.homeworks.homework09.classes.MyException;
 
+/**
+ * @since java 11
+ * @author Alexander Fomenko
+ * @version 1.0
+ */
 public class HW09App {
-
+/**
+ * @exception MyException
+ * main method
+ */
     public static void main(String[] args) throws MyException {
 	Menu.start();
-	System.out.println("Test");
+	
 	Methods m = new Methods();
 	m.addition(53321, -47174);
 	m.subtraction(-654, 321);

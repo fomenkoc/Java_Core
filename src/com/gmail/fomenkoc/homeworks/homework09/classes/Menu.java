@@ -5,6 +5,11 @@ import java.util.Scanner;
 import com.gmail.fomenkoc.homeworks.homework09.enumeration.Month;
 import com.gmail.fomenkoc.homeworks.homework09.enumeration.Season;
 
+/**
+ * @author Alexander Fomenko
+ * @version 1.1
+ * main menu for HW09App
+ * */
 public class Menu {
     private static boolean isRun;
     private static Scanner scanner = new Scanner(System.in);
@@ -30,6 +35,9 @@ public class Menu {
 	}
     }
 
+    /**
+     * Display main menu in console
+     * */
     static void showMainMenu() {
 	String mainMenu = 
 		"Enter number to execute action:" 
@@ -50,13 +58,18 @@ public class Menu {
 		+ "\r\n"
 		+ "8 - Display all months that have an odd number of days"
 		+ "\r\n"
-		+ "9 - Display whether the month entered from the console has an even number of days"
+		+ "9 - Display whether the month entered from the console has an even "
+		+ "number of days"
 		+ "\r\n" 
 		+ "0 - Exit";
 	System.out.println(mainMenu);
 
     }
 
+    /**
+     * @param int
+     * show sub-menu in console
+     * */
     static void showSubMenu(int menuItem) {
 
 	switch (menuItem) {
@@ -206,14 +219,26 @@ public class Menu {
 	}
     }
 
+    /**
+     * check application status
+     * */
     public static boolean isRun() {
 	return isRun;
     }
-
+    
+    /**
+     * change application status
+     * */
     public static void setRun(boolean isRun) {
 	Menu.isRun = isRun;
     }
     
+    /**
+     * @param String
+     * @return int
+     * @throws WrongInputParameter
+     * convert String to int
+     * */
     public static int castToInt(String inputStr) throws WrongInputParameter {
 	if (inputStr.matches("[-+]?\\d+")) {
 	    return Integer.parseInt(inputStr);
