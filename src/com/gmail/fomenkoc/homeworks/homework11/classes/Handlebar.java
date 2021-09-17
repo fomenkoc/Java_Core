@@ -2,7 +2,7 @@ package com.gmail.fomenkoc.homeworks.homework11.classes;
 
 public class Handlebar {
     private static String[] materials = { "Leather", "Alcantara",
-    					"Plastic" };
+    					"Plastic", "Titanium", "Adamantium" };
     private int diameter;
     private String material;
 
@@ -15,12 +15,12 @@ public class Handlebar {
     public Handlebar() {
 	super();
 	this.diameter = RandomNum.getInt(35, 40);
-	this.material = materials[RandomNum.getInt(0, 2)];
+	this.material = materials[RandomNum.getInt(0, materials.length - 1)];
     }
 
     @Override
     public String toString() {
-	return "Handlebar [diameter=" + diameter + ", material="
+	return "[diameter=" + diameter + ", material="
 		+ material + "]";
     }
 
