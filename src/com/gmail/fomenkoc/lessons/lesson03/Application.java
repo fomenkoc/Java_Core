@@ -18,9 +18,9 @@ public class Application {
 		
 		System.out.println(a1.getAge());
 		
-//		System.out.println(a2);
+		System.out.println(a2);
 		
-//		System.out.println(a3);
+		System.out.println(a3);
 		
 		
 		
