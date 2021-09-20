@@ -6,6 +6,7 @@ public class HW12App {
 
     public static void main(String[] args) {
 	TaskOne.run();
+	TaskTwo.start();
     }
 
 }
