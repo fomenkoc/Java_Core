@@ -1,15 +1,13 @@
 package com.gmail.fomenkoc.homeworks.homework12.classes;
 
 import java.util.Scanner;
-
-import com.gmail.fomenkoc.homeworks.homework12.enumeration.Month;
-import com.gmail.fomenkoc.homeworks.homework12.enumeration.Season;
+import java.util.ArrayList;
 
 public class TaskTwo {
     private static boolean isRun;
     private static Scanner scanner = new Scanner(System.in);
 
-    public static void start() {
+    public static void run() {
 	String input = "0";
 
 	setRun(true);
@@ -51,6 +49,7 @@ public class TaskTwo {
 		+ "\r\n" 
 		+ "0 - Exit";
 	System.out.println(mainMenu);
+	
 
     }
 
@@ -59,7 +58,7 @@ public class TaskTwo {
 
 	switch (menuItem) {
 	case "0": {
-	    System.out.println("Good-bye");
+	    System.out.println();
 	    setRun(false);
 	    break;
 	}
@@ -98,14 +97,14 @@ public class TaskTwo {
 
     static void actions(String menuItem, String input) {
 	input = input.toUpperCase();
-	Month[] months = Month.values();
+	ArrayList<Month> months = Lists.getMonths();
 
 	switch (menuItem) {
 	case "1": {
 
 	    for (Month month : months) {
-		if (month.getSeasonStr().equals(input)) {
-		    System.out.println(month.name());
+		if (month.getSeason().getSeasonName().equals(input)) {
+		    System.out.println(month.getMonthName());
 		}
 	    }
 	    break;
@@ -113,8 +112,8 @@ public class TaskTwo {
 	case "2": {
 
 	    for (Month month : months) {
-		if (month.getDayCount() == Integer.parseInt(input)) {
-		    System.out.println(month.name());
+		if (month.getDaysCount() == Integer.parseInt(input)) {
+		    System.out.println(month.getMonthName());
 		}
 	    }
 	    break;
@@ -122,8 +121,8 @@ public class TaskTwo {
 	case "3": {
 
 	    for (Month month : months) {
-		if (month.getDayCount() < Integer.parseInt(input)) {
-		    System.out.println(month.name());
+		if (month.getDaysCount() < Integer.parseInt(input)) {
+		    System.out.println(month.getMonthName());
 		}
 	    }
 	    break;
@@ -131,36 +130,36 @@ public class TaskTwo {
 	case "4": {
 
 	    for (Month month : months) {
-		if (month.getDayCount() > Integer.parseInt(input)) {
-		    System.out.println(month.name());
+		if (month.getDaysCount() > Integer.parseInt(input)) {
+		    System.out.println(month.getMonthName());
 		}
 	    }
 	    break;
 	}
 	case "5": {
 	    int seasonID = -1;
-	    Season[] seasons = Season.values();
-	    for (int i = 0; i < seasons.length; i++) {
-		if (seasons[i].name().equals(input)) {
+	    ArrayList<Season> seasons = Lists.getSeasons();
+	    for (int i = 0; i < seasons.size(); i++) {
+		if (seasons.get(i).getSeasonName().equals(input)) {
 		    seasonID = i;
 		}
 	    }
 	    if (seasonID == -1) {
 		System.out.println("Incorrect season.");
 		break;
-	    } else if (seasonID == seasons.length - 1) {
+	    } else if (seasonID == seasons.size() - 1) {
 		seasonID = 0;
 	    } else {
 		seasonID++;
 	    }
-	    System.out.println(seasons[seasonID]);
+	    System.out.println(seasons.get(seasonID).getSeasonName());
 	    break;
 	}
 	case "6": {
 	    int seasonID = -1;
-	    Season[] seasons = Season.values();
-	    for (int i = 0; i < seasons.length; i++) {
-		if (seasons[i].name().equals(input)) {
+	    ArrayList<Season> seasons = Lists.getSeasons();
+	    for (int i = 0; i < seasons.size(); i++) {
+		if (seasons.get(i).getSeasonName().equals(input)) {
 		    seasonID = i;
 		}
 	    }
@@ -168,33 +167,33 @@ public class TaskTwo {
 		System.out.println("Incorrect season.");
 		break;
 	    } else if (seasonID == 0) {
-		seasonID = seasons.length - 1;
+		seasonID = seasons.size() - 1;
 	    } else {
 		seasonID--;
 	    }
-	    System.out.println(seasons[seasonID]);
+	    System.out.println(seasons.get(seasonID).getSeasonName());
 	    break;
 	}
 	case "7": {
 	    for (Month month : months) {
-		if (month.getDayCount() % 2 == 0) {
-		    System.out.println(month.name());
+		if (month.getDaysCount() % 2 == 0) {
+		    System.out.println(month.getMonthName());
 		}
 	    }
 	    break;
 	}
 	case "8": {
 	    for (Month month : months) {
-		if (month.getDayCount() % 2 != 0) {
-		    System.out.println(month.name());
+		if (month.getDaysCount() % 2 != 0) {
+		    System.out.println(month.getMonthName());
 		}
 	    }
 	    break;
 	}
 	case "9": {
 	    for (Month month : months) {
-		if (month.name().equals(input)) {
-		    System.out.println(month.getDayCount() % 2 == 0);
+		if (month.getMonthName().equals(input)) {
+		    System.out.println(month.getDaysCount() % 2 == 0);
 		}
 	    }
 	    break;

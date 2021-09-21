@@ -28,7 +28,7 @@ public class TaskOne {
 	    switch (inputStr) {
 	    case "0": {
 		run = false;
-		scanner.close();
+		System.out.println();
 		break;
 	    }
 	    case "1": {
