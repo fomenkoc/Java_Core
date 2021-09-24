@@ -55,9 +55,8 @@ public class Deputy extends Human implements Comparable<Deputy> {
 
     @Override
     public String toString() {
-	return "\nDeputy [firstName=" + firstName + ", lastName="
-		+ lastName + ", bribeTaker=" + bribeTaker + ", bribe="
-		+ bribe + "]";
+	return "\nDeputy [firstName=" + firstName + ", lastName=" + lastName
+		+ ", bribeTaker=" + bribeTaker + ", bribe=" + bribe + "]";
     }
 
     public void giveBribe() {
@@ -68,8 +67,7 @@ public class Deputy extends Human implements Comparable<Deputy> {
 	    System.out.println("Enter bribe sum:");
 	    double bribeSum = scanner.nextDouble();
 	    if (bribeSum > 5000) {
-		System.out.println(
-			"The police will imprison the deputy");
+		System.out.println("The police will imprison the deputy");
 	    } else {
 		this.bribe += bribeSum;
 	    }
@@ -78,8 +76,7 @@ public class Deputy extends Human implements Comparable<Deputy> {
 
     @Override
     public int compareTo(Deputy o) {
-	if (this.getFirstName()
-		.compareToIgnoreCase(o.getFirstName()) > 0) {
+	if (this.getFirstName().compareToIgnoreCase(o.getFirstName()) > 0) {
 	    return 1;
 	} else if (this.getFirstName()
 		.compareToIgnoreCase(o.getFirstName()) < 0) {
@@ -87,10 +84,11 @@ public class Deputy extends Human implements Comparable<Deputy> {
 	} else {
 	    if (this.getLastName().compareToIgnoreCase(o.getLastName()) > 0) {
 		return 1;
-	    }else if (this.getLastName().compareToIgnoreCase(o.getLastName()) < 0) {
+	    } else if (this.getLastName()
+		    .compareToIgnoreCase(o.getLastName()) < 0) {
 		return -1;
 	    }
-	    
+
 	}
 	return 0;
     }
