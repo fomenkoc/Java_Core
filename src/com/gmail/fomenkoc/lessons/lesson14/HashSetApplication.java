@@ -11,7 +11,7 @@ public class HashSetApplication {
     public static void main(String[] args) {
 
 //		Set<Double> setDouble = new HashSet<>();
-//		setDouble.add(3.2);
+//		setDouble.add (3.2);
 //		setDouble.add(1.7);
 //		setDouble.add(0.9);
 //
