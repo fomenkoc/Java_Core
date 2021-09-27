@@ -17,17 +17,17 @@ public class HW13App {
 
 	boolean run = true;
 	Scanner scanner = new Scanner(System.in);
-	String mainMenu = "\nВведіть 1 щоб додати фракцію\n"
-		+ "Введіть 2 щоб видалити конкретну фракцію\n"
-		+ "Введіть 3 щоб вивести усі  фракції\n"
-		+ "Введіть 4 щоб очистити конкретну фракцію\n"
-		+ "Введіть 5 щоб вивести конкретну фракцію\n"
-		+ "Введіть 6 щоб додати депутата в фракцію\n"
-		+ "Введіть 7 щоб видалити депутата з фракції\n"
-		+ "Введіть 8 щоб вивести список хабарників\n"
-		+ "Введіть 9 щоб вивести найбільшого хабарника\n"
-		+ "Введіть 0 щоб завершити програму\n"
-		+ "Введіть 10 щоб заповнити тестовими даними\n";
+	String mainMenu = "\nEnter 1 to add a faction\n"
+		+ "Enter 2 to delete a specific faction\n"
+		+ "Enter 3 to display all factions\n"
+		+ "Enter 4 to clear a specific faction\n"
+		+ "Enter 5 to display a specific faction\n"
+		+ "Enter 6 to add a deputy to the faction\n"
+		+ "Enter 7 to remove the deputy from the faction\n"
+		+ "Enter 8 to display a list of bribe-takers\n"
+		+ "Enter 9 to display the largest bribe taker\n"
+		+ "Enter 0 to end the program\n"
+		+ "Enter 10 to fill in the test data\n";
 	while (run) {
 	    System.out.println(mainMenu);
 	    String input = scanner.next();
