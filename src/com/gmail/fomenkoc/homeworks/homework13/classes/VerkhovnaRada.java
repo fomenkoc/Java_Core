@@ -133,7 +133,9 @@ public class VerkhovnaRada {
 	Iterator<Faction> iterator = this.factions.iterator();
 	while (iterator.hasNext()) {
 	    Faction faction = iterator.next();
-	    briberDeputies.add(faction.getTopBriber());
+	    if (faction.getDeputies().size() > 0) {
+		briberDeputies.add(faction.getTopBriber());
+	    }
 	}
 	Collections.sort(briberDeputies, new TopBriberComparator());
 	System.out.println(briberDeputies.get(0).getFullName());
