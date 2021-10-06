@@ -34,8 +34,7 @@ public class HW17App {
 
 		Iterator iteratorThree = new Iterator() {
 			private int count = Collection.getNumbers().length - 1;
-			private int localCounter = 0;
-
+			
 			@Override
 			public Object next() {
 				count = count - 3;
