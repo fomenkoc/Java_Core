@@ -1,6 +1,6 @@
 package com.gmail.fomenkoc.lessons.lesson18;
 
-public class Restricriction <T extends Number>{
+public class Restricriction<T extends Number> {
 
 	T[] nums;
 
@@ -8,16 +8,14 @@ public class Restricriction <T extends Number>{
 		super();
 		this.nums = nums;
 	}
-	
-	double average () {
+
+	double average() {
 		double sum = 0;
-		for (int i= 0; i<nums.length; i++) {
-			sum+=nums[i].doubleValue();
+		for (int i = 0; i < nums.length; i++) {
+			sum += nums[i].doubleValue();
 		}
-		
-		return sum/nums.length;
+
+		return sum / nums.length;
 	}
-	
-	
-	
+
 }

@@ -1,70 +1,76 @@
 package com.gmail.fomenkoc.lessons.lesson18;
 
-public class Coords <T extends TwoC> {
+public class Coords<T extends TwoC> {
 
-	T [] coords;
+	T[] coords;
 
 	public Coords(T[] coords) {
 		super();
 		this.coords = coords;
 	}
-	
-	public static void showXY (Coords<?> c) {
+
+	public static void showXY(Coords<?> c) {
 		System.out.println("Coordinates of XY :");
 		for (int i = 0; i < c.coords.length; i++) {
-			System.out.println(c.coords[i].x +"---"+ c.coords[i].y);
+			System.out.println(c.coords[i].x + "---" + c.coords[i].y);
 			System.out.println();
 		}
 	}
-	
-	public static void showXYZ (Coords<? extends ThreeC> c) {
+
+	public static void showXYZ(Coords<? extends ThreeC> c) {
 		System.out.println("Coordinates of XYZ :");
 		for (int i = 0; i < c.coords.length; i++) {
-			System.out.println(c.coords[i].x +"---"+ c.coords[i].y+"---"+ c.coords[i].z);
+			System.out.println(c.coords[i].x + "---" + c.coords[i].y + "---"
+					+ c.coords[i].z);
 			System.out.println();
 		}
 	}
-	
-	public static void showXYZT (Coords<? extends FourC> c) {
+
+	public static void showXYZT(Coords<? extends FourC> c) {
 		System.out.println("Coordinates of XYZT :");
 		for (int i = 0; i < c.coords.length; i++) {
-			System.out.println(c.coords[i].x +"---"+ c.coords[i].y+"---"+ c.coords[i].z+"---"+ c.coords[i].t);
+			System.out.println(c.coords[i].x + "---" + c.coords[i].y + "---"
+					+ c.coords[i].z + "---" + c.coords[i].t);
 			System.out.println();
 		}
 	}
-	
-	public static void showXYsuper (Coords<? super FourC> c) {
+
+	public static void showXYsuper(Coords<? super FourC> c) {
 		System.out.println("Coordinates of XYZ :");
 		for (int i = 0; i < c.coords.length; i++) {
-			System.out.println(c.coords[i].x +"---"+ c.coords[i].y+"---");
+			System.out.println(c.coords[i].x + "---" + c.coords[i].y + "---");
 			System.out.println();
 		}
 	}
-	
+
 }
 
 class TwoC {
 	int x;
 	int y;
-	
+
 	public TwoC(int x, int y) {
 		super();
 		this.x = x;
 		this.y = y;
 	}
+
 	public int getX() {
 		return x;
 	}
+
 	public void setX(int x) {
 		this.x = x;
 	}
+
 	public int getY() {
 		return y;
 	}
+
 	public void setY(int y) {
 		this.y = y;
 	}
-	
+
 }
 
 class ThreeC extends TwoC {
@@ -84,7 +90,7 @@ class ThreeC extends TwoC {
 	}
 }
 
-class FourC extends ThreeC{
+class FourC extends ThreeC {
 	int t;
 
 	public FourC(int x, int y, int z, int t) {
@@ -99,45 +105,5 @@ class FourC extends ThreeC{
 	public void setT(int t) {
 		this.t = t;
 	}
-	
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

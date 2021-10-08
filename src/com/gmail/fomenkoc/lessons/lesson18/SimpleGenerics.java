@@ -1,6 +1,6 @@
 package com.gmail.fomenkoc.lessons.lesson18;
 
-public class SimpleGenerics <T>{
+public class SimpleGenerics<T> {
 
 	T ob;
 
@@ -16,9 +16,9 @@ public class SimpleGenerics <T>{
 	public void setOb(T ob) {
 		this.ob = ob;
 	}
-	
+
 	public void showType() {
-		System.out.println("Type of T is: "+ob.getClass().getName());
+		System.out.println("Type of T is: " + ob.getClass().getName());
 	}
-	
+
 }
