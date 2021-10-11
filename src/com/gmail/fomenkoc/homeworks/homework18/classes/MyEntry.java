@@ -3,45 +3,44 @@ package com.gmail.fomenkoc.homeworks.homework18.classes;
 import java.util.Objects;
 
 public class MyEntry<K, V> {
-	K firstGen;
-	V secondGen;
+	K key;
+	V value;
 
 	public MyEntry() {
 		super();
 
 	}
 
-	public MyEntry(K firstGen, V secondGen) {
+	public MyEntry(K key, V value) {
 		super();
-		this.firstGen = firstGen;
-		this.secondGen = secondGen;
+		this.key = key;
+		this.value = value;
 	}
 
-	public K getFirstGen() {
-		return firstGen;
+	public K getKey() {
+		return key;
 	}
 
-	public void setFirstGen(K firstGen) {
-		this.firstGen = firstGen;
+	public void setKey(K key) {
+		this.key = key;
 	}
 
-	public V getSecondGen() {
-		return secondGen;
+	public V getValue() {
+		return value;
 	}
 
-	public void setSecondGen(V secondGen) {
-		this.secondGen = secondGen;
+	public void setValue(V value) {
+		this.value = value;
 	}
 
 	@Override
 	public String toString() {
-		return "MyEntry [firstGen=" + firstGen + ", secondGen=" + secondGen
-				+ "]";
+		return "MyEntry [key=" + key + ", value=" + value + "]";
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(firstGen, secondGen);
+		return Objects.hash(key, value);
 	}
 
 	@Override
@@ -53,8 +52,8 @@ public class MyEntry<K, V> {
 		if (getClass() != obj.getClass())
 			return false;
 		MyEntry other = (MyEntry) obj;
-		return Objects.equals(firstGen, other.firstGen)
-				&& Objects.equals(secondGen, other.secondGen);
+		return Objects.equals(key, other.key)
+				&& Objects.equals(value, other.value);
 	}
 
 }
