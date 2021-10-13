@@ -19,3 +19,7 @@
 .classpath
 .project
 /bin/
+
+# datafiles
+*.txt
+*.obj
