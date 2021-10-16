@@ -23,9 +23,11 @@ public class HW18App {
 		listAnyObj.add("lkiuy7");
 		listAnyObj.add(new MyEntry<>(999, "Anything can be inserted in list)"));
 
-/*		Під час компеляції дженеріки знеособлюються, тому якщо їх не вказувати 
- * 	явно у ліста донора - наповнення можна скопіювати в типізований
- */
+		/*
+		 * Під час компеляції дженеріки знеособлюються, тому якщо їх не
+		 * вказувати явно у ліста донора - наповнення можна скопіювати в
+		 * типізований
+		 */
 		listInt.addAll(listAnyObj);
 
 		for (int i = 0; i < listInt.size(); i++) {
@@ -57,48 +59,47 @@ public class HW18App {
 		map.add(10, "Ten");
 		map.add(11, "Eleven");
 		map.add(12, "Twelve");
-		
 
 		for (int i = 0; i < map.size(); i++) {
 			System.out.println(map.getEntry(i));
 		}
-		
+
 		System.out.println();
-		
+
 		System.out.println("Get value by key:");
 		System.out.println(map.getValue(8));
 		System.out.println();
 		System.out.println("Get key by value:");
 		System.out.println(map.getKey("Two"));
-		
+
 		System.out.println();
 		System.out.println("Remove object by key (3)");
 		map.removeByKey(3);
-		
+
 		for (int i = 0; i < map.size(); i++) {
 			System.out.println(map.getEntry(i));
 		}
-		
+
 		System.out.println();
 		System.out.println("Remove object by value (Nine)");
 		map.removeByValue("Nine");
-		
+
 		for (int i = 0; i < map.size(); i++) {
 			System.out.println(map.getEntry(i));
 		}
-		
+
 		System.out.println();
 		System.out.println("KeysSet:");
 		System.out.println(map.getKeysSet());
-		
+
 		System.out.println();
 		System.out.println("ValuesList:");
 		System.out.println(map.getValuesList());
-		
+
 		System.out.println();
 		System.out.println("Map:");
 		System.out.println(map);
-		
+
 	}
 
 }
