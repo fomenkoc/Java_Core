@@ -7,7 +7,7 @@ import com.gmail.fomenkoc.homeworks.homework22.classes.Overload;
 import com.gmail.fomenkoc.homeworks.homework22.classes.Amphibia;
 import com.gmail.fomenkoc.homeworks.homework22.classes.Frog;
 
-public class HW05App {
+public class HW22App {
 
 	public static void main(String[] args) {
 		
