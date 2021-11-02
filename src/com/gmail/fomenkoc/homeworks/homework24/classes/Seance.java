@@ -65,7 +65,16 @@ public class Seance implements Comparable<Seance>{
 
 	@Override
 	public int compareTo(Seance o) {
-		// TODO Auto-generated method stub
+		
+		if ((this.startTime.timeToMinutes.apply(this.startTime)) 
+				> 
+			(o.startTime.timeToMinutes.apply(o.startTime))) {
+			return 1;
+		} else if ((this.startTime.timeToMinutes.apply(this.startTime)) 
+						< 
+					(o.startTime.timeToMinutes.apply(o.startTime))) {
+			return -1;
+		} else
 		return 0;
 	}
 

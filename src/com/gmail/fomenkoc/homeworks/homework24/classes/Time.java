@@ -10,7 +10,7 @@ public class Time {
 	private BiPredicate<Integer, Integer> isCorrectTime = (hh, mm) -> 
 									hh >= 0 && hh < 24 && mm >= 0 && mm < 60;
 									
-    private Function<Time, Integer> timeToMinutes = t ->
+    public Function<Time, Integer> timeToMinutes = t ->
     											t.hours * 60 + t.getMinutes();
 
 	public Time(int hours, int minutes) {

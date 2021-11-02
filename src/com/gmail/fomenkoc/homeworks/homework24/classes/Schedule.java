@@ -15,6 +15,7 @@ public class Schedule {
 	
 	public void addSeance(Seance seance) {
 		this.seances.add(seance);
+		
 	}
 	
 	public void removeSeance(Seance seance) {

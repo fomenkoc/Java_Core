@@ -1,5 +1,9 @@
 package com.gmail.fomenkoc.homeworks.homework24;
 
+import java.util.Iterator;
+import java.util.Set;
+import java.util.TreeSet;
+
 import com.gmail.fomenkoc.homeworks.homework24.classes.Movie;
 import com.gmail.fomenkoc.homeworks.homework24.classes.Schedule;
 import com.gmail.fomenkoc.homeworks.homework24.classes.Seance;
@@ -21,14 +25,18 @@ public class HW24App {
 		Seance seance = new Seance(movie, time);
 		Seance seance2 = new Seance(movie2, time2);
 //		System.out.println(seance);
+//		System.out.println(seance2);
 		
 		Schedule schedule = new Schedule();
 		schedule.addSeance(seance);
 		schedule.addSeance(seance2);
 		System.out.println(schedule);
-		schedule.removeSeance(seance);
-		System.out.println();
-		System.out.println(schedule);
+		
+		
+		
+//		schedule.removeSeance(seance);
+//		System.out.println();
+		
 
 	}
 
