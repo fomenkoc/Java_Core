@@ -2,12 +2,16 @@ package com.gmail.fomenkoc.homeworks.homework24.classes;
 
 import java.util.Objects;
 import java.util.function.BiPredicate;
+import java.util.function.Function;
 
 public class Time {
 	private int hours;
 	private int minutes;
-	BiPredicate<Integer, Integer> isCorrectTime = (hh, mm) -> hh >= 0 && hh < 24
-			&& mm >= 0 && mm < 60;
+	private BiPredicate<Integer, Integer> isCorrectTime = (hh, mm) -> 
+									hh >= 0 && hh < 24 && mm >= 0 && mm < 60;
+									
+    private Function<Time, Integer> timeToMinutes = t ->
+    											t.hours * 60 + t.getMinutes();
 
 	public Time(int hours, int minutes) {
 		if (isCorrectTime.test(hours, minutes)) {
@@ -18,6 +22,19 @@ public class Time {
 					+ "] Incorrect time format (hours 0-23, minutes 0-59)");
 		}
 
+	}
+	
+	public Time calcNewTime(Time startTime, Time duration) {
+		int hours;
+		int minutes = timeToMinutes.apply(startTime);
+		minutes += timeToMinutes.apply(duration);
+		hours = minutes / 60;
+		minutes = minutes % 60;
+		
+		while (hours >= 24)
+			hours -= 24;
+		
+		return new Time(hours, minutes);
 	}
 
 	public int getHours() {
