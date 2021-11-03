@@ -1,6 +1,5 @@
 package com.gmail.fomenkoc.homeworks.homework24;
 
-import java.util.Arrays;
 
 import com.gmail.fomenkoc.homeworks.homework24.classes.Cinema;
 import com.gmail.fomenkoc.homeworks.homework24.classes.Movie;
@@ -19,6 +18,7 @@ public class HW24App {
 		Movie movie = new Movie("Batman Bigins", 2, 20);
 		Movie movie2 = new Movie("The Dark Knight", 2, 32);
 		Movie movie3 = new Movie("The Dark Knight Rises", 2, 45);
+		Movie movie4 = new Movie("Test", 2, 45);
 		
 		Seance seance = new Seance(movie, time);
 		Seance seance2 = new Seance(movie2, time2);
@@ -33,11 +33,23 @@ public class HW24App {
 		
 		Cinema cinema = new Cinema();
 		cinema.addSeance(seance, "friday");
-		System.out.println(cinema.getSchedules());
-		System.out.println();
 		cinema.addSeance(seance2, "friday");
+		cinema.addSeance(seance3, "friday");
 		System.out.println(cinema.getSchedules());
 		
+		cinema.addMovie(movie);
+		cinema.addMovie(movie2);
+		cinema.addMovie(movie3);
+//		System.out.println(cinema.getMoviesLibrary());
+		
+		
+		System.out.println();
+		System.out.println();
+//		cinema.removeMovie(movie3);
+//		cinema.removeMovie(movie4);
+		cinema.removeSeance(seance3, "friday");
+
+		System.out.println(cinema.getSchedules());
 		
 		
 		

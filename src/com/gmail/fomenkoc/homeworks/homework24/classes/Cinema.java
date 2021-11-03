@@ -1,8 +1,12 @@
 package com.gmail.fomenkoc.homeworks.homework24.classes;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Objects;
 import java.util.TreeMap;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 import com.gmail.fomenkoc.homeworks.homework24.enums.Days;
 
@@ -47,9 +51,40 @@ public class Cinema {
 			throw new IllegalArgumentException("\"" + dayStr 
 									+ "\" is incorrect day name!");
 		}
+		
+		if (this.schedules.get(day) != null) {
+			this.schedules.get(day).addSeance(seance);
+		} else {
+		
 		Schedule schedule = new Schedule();
 		schedule.addSeance(seance);
 		this.schedules.put(day, schedule);
+		}
+	}
+	
+	public void removeMovie(Movie movie) {
+		setMoviesLibrary((ArrayList<Movie>) this.moviesLibrary.stream()
+				.filter(m -> !m.equals(movie)).collect(Collectors.toList()));
+
+		for (Days day : Days.values()) {
+			if (this.schedules.get(day) != null)
+				this.schedules.get(day).getSeances()
+									.removeIf(s -> s.getMovie().equals(movie));
+		}
+	}
+	
+	public void removeSeance(Seance seance, String dayStr) {
+		Days day;
+		if (Days.isCorrect.test(dayStr)) {
+			day = Days.valueOf(dayStr.toUpperCase());
+
+		} else {
+			throw new IllegalArgumentException(
+					"\"" + dayStr + "\" is incorrect day name!");
+		}
+		if (this.schedules.get(day) != null)
+			this.schedules.get(day).getSeances()
+										.removeIf(s -> s.equals(seance));
 	}
 
 	public TreeMap<Days, Schedule> getSchedules() {
