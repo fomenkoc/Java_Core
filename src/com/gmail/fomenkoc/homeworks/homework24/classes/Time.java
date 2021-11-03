@@ -12,6 +12,7 @@ public class Time {
 									
     public Function<Time, Integer> timeToMinutes = t ->
     											t.hours * 60 + t.getMinutes();
+    public static Function<Integer, Time> newByMin = i -> new Time(i/60, i%60);
 
 	public Time(int hours, int minutes) {
 		if (isCorrectTime.test(hours, minutes)) {
