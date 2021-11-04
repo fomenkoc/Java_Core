@@ -1,12 +1,12 @@
 package com.gmail.fomenkoc.homeworks.homework24;
 
 import java.util.Scanner;
-import java.util.stream.Collectors;
 
 import com.gmail.fomenkoc.homeworks.homework24.classes.Cinema;
+import com.gmail.fomenkoc.homeworks.homework24.classes.Movie;
 import com.gmail.fomenkoc.homeworks.homework24.classes.Seance;
 import com.gmail.fomenkoc.homeworks.homework24.classes.Time;
-import com.gmail.fomenkoc.homeworks.homework24.enums.Days;
+
 
 public class HW24App {
 
@@ -29,19 +29,15 @@ public class HW24App {
 		
 		while (run) {
 			System.out.println(menu);
-			input = scStr.next();
+			input = scStr.nextLine();
 			switch (input) {
 			case "1": {
 				cinema.fillTestData();
-				System.out.println(cinema.getMoviesLibrary()
-						.stream()
-						.filter(m -> m.getTitle().equalsIgnoreCase("man of steel"))
-						.findFirst().get());
 				break;
 			}
 			case "2": {
 				System.out.print("Enter movie title:");
-				String movieTitle = scStr.next();
+				String movieTitle = scStr.nextLine();
 				System.out.print("Enter mivie duration in minutes:");
 				int durationMins = scInt.nextInt();
 				cinema.addMovie(movieTitle, durationMins);
@@ -52,7 +48,7 @@ public class HW24App {
 				System.out.print("Enter movie id:");
 				int movieID = scInt.nextInt();
 				System.out.print("Enter day:");
-				String dayStr = scStr.next();
+				String dayStr = scStr.nextLine();
 				System.out.println("Start time");
 				System.out.print("Hours:");
 				int hours = scInt.nextInt();
@@ -73,22 +69,26 @@ public class HW24App {
 			}
 			case "5":{
 				System.out.print("Enter day:");
-				String dayStr = scStr.next();
+				String dayStr = scStr.nextLine();
 				cinema.showSeancesByDay(dayStr);
 				System.out.print("Enter movie title:");
-				String movieTitle = scStr.next();
-				System.out.println(movieTitle);
-				System.out.println(cinema.getMovieByName.apply(movieTitle));
-//				System.out.println("Start time");
-//				System.out.print("Hours:");
-//				int hours = scInt.nextInt();
-//				System.out.print("Minutes:");
-//				int mins = scInt.nextInt();
-//				Time startTime = new Time(hours, mins);
-//				cinema.removeSeance(new Seance(cinema.getMoviesLibrary()
-//						.stream()
-//						.filter(m -> m.getTitle().equalsIgnoreCase(movieTitle))
-//						.findFirst().get(), startTime), dayStr);
+				String movieTitle = scStr.nextLine();
+				Movie movie = cinema.getMovieByName.apply(movieTitle);
+				System.out.println("Start time");
+				System.out.print("Hours:");
+				int hours = scInt.nextInt();
+				System.out.print("Minutes:");
+				int mins = scInt.nextInt();
+				Time startTime = new Time(hours, mins);
+				cinema.removeSeance(new Seance(movie, startTime), dayStr);
+				break;
+			}
+			case "6":{
+				cinema.showLibrary();
+				break;
+			}
+			case "7":{
+				cinema.showAllSeances();
 				break;
 			}
 			case "0": {

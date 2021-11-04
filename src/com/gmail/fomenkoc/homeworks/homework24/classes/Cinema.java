@@ -194,6 +194,13 @@ public class Cinema {
 		}
 	}
 	
+	public void showAllSeances() {
+		for (Days day : Days.values()) {
+			System.out.println("\n" + day + ":");
+			System.out.println(this.getSchedules().get(day).toString());
+		}
+	}
+	
 	public void showSeancesByDay(String dayStr) {
 		Days day = null;
 		if (Days.isCorrect.test(dayStr)) {
