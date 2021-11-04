@@ -1,11 +1,10 @@
 package com.gmail.fomenkoc.homeworks.homework24.classes;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.Objects;
 import java.util.TreeMap;
-import java.util.stream.Collector;
+import java.util.function.BiPredicate;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 import com.gmail.fomenkoc.homeworks.homework24.enums.Days;
@@ -16,6 +15,15 @@ public class Cinema {
 	private Time open;
 	private Time close;
 	
+	private BiPredicate<Time, Time> isCinemaOpen = 
+			(bt, et) -> bt.timeToMinutes.apply(bt) >= this.open.timeToMinutes
+					.apply(getOpen())
+					&& et.timeToMinutes.apply(et) <= this.close.timeToMinutes
+							.apply(getClose());
+			
+	public Function<String, Movie> getMovieByName = t -> getMoviesLibrary()
+			.stream().filter(m -> m.getTitle().equalsIgnoreCase(t)).findFirst()
+			.get();
 	
 	public Cinema() {
 		super();
@@ -52,13 +60,19 @@ public class Cinema {
 									+ "\" is incorrect day name!");
 		}
 		
-		if (this.schedules.get(day) != null) {
-			this.schedules.get(day).addSeance(seance);
+		if (isCinemaOpen.test(seance.getStartTime(), seance.getEndTime())) {
+
+			if (this.schedules.get(day) != null) {
+				this.schedules.get(day).addSeance(seance);
+			} else {
+
+				Schedule schedule = new Schedule();
+				schedule.addSeance(seance);
+				this.schedules.put(day, schedule);
+			}
 		} else {
-		
-		Schedule schedule = new Schedule();
-		schedule.addSeance(seance);
-		this.schedules.put(day, schedule);
+			System.out.println("The cinema works from " + this.getOpen()
+					+ " to " + this.getClose());
 		}
 	}
 	
@@ -85,6 +99,107 @@ public class Cinema {
 		if (this.schedules.get(day) != null)
 			this.schedules.get(day).getSeances()
 										.removeIf(s -> s.equals(seance));
+	}
+	
+	public void fillTestData() {
+		this.moviesLibrary = new ArrayList<Movie>();
+		this.addMovie(new Movie("Batman Bigins", 140));
+		this.addMovie(new Movie("The Dark Knight", 152));
+		this.addMovie(new Movie("The Dark Knight Rises", 165));
+		this.addMovie(new Movie("Man of Steel", 143));
+		this.addMovie(new Movie("Batman v Superman: Dawn of Justice", 152));
+		this.addMovie(new Movie("Suicide Squad", 123));
+		this.addMovie(new Movie("Wonder Woman", 141));
+		this.addMovie(new Movie("Justice League", 120));
+		this.addMovie(new Movie("Zack Snyder's Justice League", 242));
+		this.addMovie(new Movie("Aquaman", 143));
+		this.addMovie(new Movie("Shazam!", 132));
+		this.addMovie(new Movie("Birds of Prey", 109));
+		this.addMovie(new Movie("Wonder Woman 1984", 151));
+		this.addMovie(new Movie("The Suicide Squad", 132));
+		
+		this.schedules = new TreeMap<Days, Schedule>();
+		
+		Seance seance = new Seance(this.moviesLibrary.get(0), new Time(9, 0));
+		this.addSeance(seance, "Monday");
+		seance = new Seance(this.moviesLibrary.get(1), new Time(11, 45));
+		this.addSeance(seance, "Monday");
+		seance = new Seance(this.moviesLibrary.get(2), new Time(14, 30));
+		this.addSeance(seance, "Monday");
+		seance = new Seance(this.moviesLibrary.get(3), new Time(17, 30));
+		this.addSeance(seance, "Monday");
+		seance = new Seance(this.moviesLibrary.get(7), new Time(20, 00));
+		this.addSeance(seance, "Monday");
+		
+		seance = new Seance(this.moviesLibrary.get(4), new Time(9, 00));
+		this.addSeance(seance, "Tuesday");
+		seance = new Seance(this.moviesLibrary.get(5), new Time(11, 45));
+		this.addSeance(seance, "Tuesday");
+		seance = new Seance(this.moviesLibrary.get(6), new Time(14, 00));
+		this.addSeance(seance, "Tuesday");
+		seance = new Seance(this.moviesLibrary.get(8), new Time(16, 30));
+		this.addSeance(seance, "Tuesday");
+		
+		seance = new Seance(this.moviesLibrary.get(9), new Time(9, 00));
+		this.addSeance(seance, "Wednesday");
+		seance = new Seance(this.moviesLibrary.get(10), new Time(12, 45));
+		this.addSeance(seance, "Wednesday");
+		seance = new Seance(this.moviesLibrary.get(11), new Time(15, 30));
+		this.addSeance(seance, "Wednesday");
+		seance = new Seance(this.moviesLibrary.get(12), new Time(17, 30));
+		this.addSeance(seance, "Wednesday");
+		
+		seance = new Seance(this.moviesLibrary.get(13), new Time(9, 00));
+		this.addSeance(seance, "Thursday");
+		seance = new Seance(this.moviesLibrary.get(0), new Time(11, 30));
+		this.addSeance(seance, "Thursday");
+		seance = new Seance(this.moviesLibrary.get(1), new Time(14, 00));
+		this.addSeance(seance, "Thursday");
+		seance = new Seance(this.moviesLibrary.get(2), new Time(17, 00));
+		this.addSeance(seance, "Thursday");
+		
+		seance = new Seance(this.moviesLibrary.get(3), new Time(9, 00));
+		this.addSeance(seance, "Friday");
+		seance = new Seance(this.moviesLibrary.get(4), new Time(12, 00));
+		this.addSeance(seance, "Friday");
+		seance = new Seance(this.moviesLibrary.get(5), new Time(15, 00));
+		this.addSeance(seance, "Friday");
+		seance = new Seance(this.moviesLibrary.get(6), new Time(17, 30));
+		this.addSeance(seance, "Friday");
+		
+		seance = new Seance(this.moviesLibrary.get(7), new Time(9, 00));
+		this.addSeance(seance, "Saturday");
+		seance = new Seance(this.moviesLibrary.get(8), new Time(11, 30));
+		this.addSeance(seance, "Saturday");
+		seance = new Seance(this.moviesLibrary.get(9), new Time(16, 00));
+		this.addSeance(seance, "Saturday");
+		seance = new Seance(this.moviesLibrary.get(10), new Time(19, 00));
+		this.addSeance(seance, "Saturday");
+		
+		seance = new Seance(this.moviesLibrary.get(11), new Time(9, 00));
+		this.addSeance(seance, "Sunday");
+		seance = new Seance(this.moviesLibrary.get(12), new Time(11, 00));
+		this.addSeance(seance, "Sunday");
+		seance = new Seance(this.moviesLibrary.get(13), new Time(14, 00));
+		this.addSeance(seance, "Sunday");
+		seance = new Seance(this.moviesLibrary.get(0), new Time(17, 00));
+		this.addSeance(seance, "Sunday");
+		
+	}
+	
+	public void showLibrary() {
+		System.out.println("id\tTitle");
+		for (int i = 0; i < this.moviesLibrary.size(); i++) {
+			System.out.println(i +"\t" + this.moviesLibrary.get(i).getTitle());
+		}
+	}
+	
+	public void showSeancesByDay(String dayStr) {
+		Days day = null;
+		if (Days.isCorrect.test(dayStr)) {
+			day = Days.valueOf(dayStr.toUpperCase());
+		}
+		System.out.println(this.schedules.get(day).toString());
 	}
 
 	public TreeMap<Days, Schedule> getSchedules() {

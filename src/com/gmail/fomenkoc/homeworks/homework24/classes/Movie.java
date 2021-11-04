@@ -17,6 +17,11 @@ public class Movie {
 		this.title = title;
 		this.duration = new Time(durationHours, durationMinutes);
 	}
+	
+	public Movie(String title, int durationMinutes) {
+		this(title, Time.newByMin.apply(durationMinutes));
+		
+	}
 
 	public String getTitle() {
 		return title;
